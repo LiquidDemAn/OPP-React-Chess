@@ -6,5 +6,9 @@ interface Props {
 }
 
 export const CellComponent = ({ cell }: Props) => {
-	return <div className={`cell ${cell.color}`}></div>;
+	return (
+		<div className={`cell ${cell.color}`}>
+			{cell.figure?.logo && <img src={cell.figure.logo} alt='' />}
+		</div>
+	);
 };
