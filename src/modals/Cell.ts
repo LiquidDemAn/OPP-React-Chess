@@ -27,6 +27,14 @@ export class Cell {
 		this.id = Math.random();
 	}
 
+	isEnemy(target: Cell) {
+		if (target.figure) {
+			return this.figure?.color !== target.figure.color;
+		}
+
+		return false;
+	}
+
 	isEmpty() {
 		return this.figure === null;
 	}
