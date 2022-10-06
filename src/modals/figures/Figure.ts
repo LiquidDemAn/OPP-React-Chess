@@ -29,10 +29,16 @@ export class Figure {
 	}
 
 	canMove(target: Cell) {
+		if (target.figure?.color === this.color) {
+			return false;
+		}
+
+		if (target.figure?.name === FigureName.KING) {
+			return false;
+		}
+
 		return true;
 	}
 
-    moveFigure(target: Cell) {
-         
-    }
+	moveFigure(target: Cell) {}
 }
